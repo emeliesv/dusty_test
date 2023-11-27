@@ -1,0 +1,50 @@
+/* Varje post ska ha padding: 20px och margin: 10px
+// Texten på title ska vara bold
+// Text-färgen ska vara grå
+// Backgrundsfärgen på varje post ska vara ljus-grå
+// När man för muspekaren över en post ska bakgrundsfärgen ändras till vit
+// Visa posts i fyra kolumner för desktop och en kolumn för mobil*/
+
+/* Just nu blir ju även kommentarerna vita när man hovrar på inläggen.
+Det är för att jag renderar alla kommentarer inuti själv .user_post-kortet.
+Det var så jag tolkade uppgiften, men hade jag valt själv hade jag kanske
+lagt kommentarerna i samma föräldraelement istället och placerat dem under varje
+user_post utan att de skulle påverkas av .user_posts hovereffekt.
+*/
+#posts,
+#postsWithComments {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.user_post {
+  padding: 20px;
+  margin: 10px;
+  color: #707070;
+  background-color: #ddd5d5;
+}
+
+.user_post h2 {
+  font-weight: bold;
+}
+
+.user_post:hover {
+  background-color: #fafafa;
+}
+
+.comments {
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid;
+}
+
+.comments h3 {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  #posts,
+  #postsWithComments {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
